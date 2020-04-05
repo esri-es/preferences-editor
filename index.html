@@ -191,6 +191,9 @@
             }else if(conf.globalId){
                 dataToUpdate.globalid = conf.globalId;
                 getOIDUrl = `${conf.url}/query?where=globalid%20IN%20(%27${conf.globalId}%27)&outFields=*&&f=pjson`
+                if(conf.token){
+                    getOIDUrl += '&token='+conf.token;
+                }
             }
 
             if(conf.globalId){
